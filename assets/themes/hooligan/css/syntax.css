@@ -1,0 +1,57 @@
+span.o {
+  color: #F8F8F2;
+}
+span.ss, span.kp {
+  color: #DE4755;
+}
+
+span.no {
+  color: #AE81FF;
+}
+
+span.k {
+  color: #BADE71;
+}
+
+span.nc, span.nf, span.s1, span.s2 {
+  color: #66D9EF;
+}
+
+span.o, .si, .p {
+  color: #BBB;
+}
+
+.highlight {
+  padding: 0px;
+}
+
+pre {
+  line-height: 18px;
+  margin-bottom: 15px;
+  white-space: pre;
+  overflow-x: auto;
+  word-break: inherit;
+  word-wrap: inherit;
+}
+
+.lineno {
+  padding-right: 1em; /* space after numbers */
+  width: 20px;
+  text-align: right;
+  opacity: 0.7;
+  display: inline-block;
+  margin-right: 16px;
+  margin-left: 0px;
+  padding: 10px 5px;
+  font-size: 13px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-right: 1px solid #75715E;
+  padding: 0px 5px;
+  color: #75715E;
+  line-height: 1.6;
+}
