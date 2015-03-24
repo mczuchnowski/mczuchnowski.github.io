@@ -3,7 +3,7 @@ layout: post
 title: "HTTP Basic Authentication in Rails"
 tagline: "Implementing and testing it in RSpec"
 category: tutorials
-tags: [ruby on rails, security]
+tags: [ruby on rails, rails 4, security]
 ---
 {% include JB/setup %}
 

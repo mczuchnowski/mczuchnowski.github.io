@@ -3,7 +3,7 @@ layout: post
 title: "Populating the database using a rake task"
 tagline: "With assistance from Faker gem"
 category: quick tips
-tags: [ruby on rails, rake]
+tags: [ruby on rails, rails 4, rake]
 ---
 {% include JB/setup %}
 

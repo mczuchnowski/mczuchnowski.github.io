@@ -3,7 +3,7 @@ layout: post
 title: "Devise and Strong Parameters"
 tagline: "Configuring custom user attributes"
 category: tutorials
-tags: [ruby on rails, devise]
+tags: [ruby on rails, rails 4, devise]
 ---
 {% include JB/setup %}
 
@@ -138,4 +138,4 @@ register with all the parameters and update them whenever they need to.
 When you're switching from Rails 3 to Rails 4, Strong Parameters are crucial to
 understand. Devise adds an extra layer of complexity by not giving you direct
 access to the controller where you would want to set up additional parameters
-for your Devise models. Hopefully, this post solved most of your issues. 
+for your Devise models. Hopefully, this post solved most of your issues.

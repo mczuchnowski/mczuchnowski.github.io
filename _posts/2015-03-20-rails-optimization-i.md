@@ -3,7 +3,7 @@ layout: post
 title: "Rails Optimization I"
 tagline: "Eager loading and counter cache"
 category: tutorials
-tags: [ruby on rails, optimization]
+tags: [ruby on rails, rails 4, optimization]
 ---
 {% include JB/setup %}
 

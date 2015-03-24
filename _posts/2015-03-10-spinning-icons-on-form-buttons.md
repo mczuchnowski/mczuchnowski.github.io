@@ -3,7 +3,7 @@ layout: post
 title: "Spinning icons on form buttons"
 tagline: "Easy tweak for better user experience"
 category: quick tips
-tags: [ruby on rails, jquery]
+tags: [ruby on rails, rails 4, jquery]
 ---
 {% include JB/setup %}
 

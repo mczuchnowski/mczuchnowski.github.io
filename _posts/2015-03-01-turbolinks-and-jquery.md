@@ -3,7 +3,7 @@ layout: post
 title: "Turbolinks and jQuery"
 tagline: "How to make them work together?"
 category: tutorials
-tags: [ruby on rails, jquery]
+tags: [ruby on rails, rails 4, jquery]
 ---
 {% include JB/setup %}
 

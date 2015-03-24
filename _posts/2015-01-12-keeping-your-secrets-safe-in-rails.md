@@ -3,7 +3,7 @@ layout: post
 title: "Keeping your secrets safe in Rails"
 tagline: "Using environment variables and .gitignore"
 category: tutorials
-tags: [ruby on rails, security, git]
+tags: [ruby on rails, rails 4, security, git]
 ---
 {% include JB/setup %}
 
