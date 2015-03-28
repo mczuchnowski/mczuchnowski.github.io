@@ -10,10 +10,6 @@
     </title>
     <meta name="description" content="{{ page.tagline }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css-social-buttons/css/zocial.stripped.css" rel="stylesheet" type="text/css">
@@ -25,14 +21,6 @@
     <link href="{{ ASSET_PATH }}/css/custom.css" rel="stylesheet" type="text/css" media="all">
     <link rel="icon" type="image/x-icon" href="http://mczuchnowski.github.io/favicon.ico">
     <link rel="shortcut" type="image/x-icon" href="http://mczuchnowski.github.io/favicon.ico">
-
-    <!-- fav and touch icons -->
-    <!-- Update these with your own images
-      <link rel="shortcut icon" href="images/favicon.ico">
-      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-    -->
   </head>
 
   <body>
@@ -106,6 +94,6 @@
     <script>window.jQuery || document.write('<script src="{{ ASSET_PATH }}/js/jquery.min.js"><\/script>')</script>
     <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>
 
-    {% include JB/analytics %}
+    {% include google_analytics.html %}
   </body>
 </html>
