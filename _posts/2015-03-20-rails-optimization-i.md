@@ -2,16 +2,17 @@
 layout: post
 title: "Rails Optimization I"
 tagline: "Eager loading and counter cache"
+description: "Code optimization often sounds scary. But basic optimization in Rails doesn't
+have to be scary or hard at all. As always, you have a great community to back
+you up with gems that facilitate everything. In this first post about
+optimization we will take a look at 'eager loading', 'counter cache' and
+even take a quick peek at 'unused eager loading'. Bullet gem will be our guide."
 category: tutorials
 tags: [ruby on rails, rails 4, optimization]
 ---
 {% include JB/setup %}
 
-Code optimization often sounds scary. But basic optimization in Rails doesn't
-have to be scary or hard at all. As always, you have a great community to back
-you up with gems that facilitate everything. In this first post about
-optimization we will take a look at "eager loading", "counter cache" and
-even take a quick peek at "unused eager loading". Bullet gem will be our guide.
+{{ page.description }}
 <!--break-->
 
 <h2>Introduction</h2>

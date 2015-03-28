@@ -2,18 +2,19 @@
 layout: post
 title: "Validating presence of object"
 tagline: "Instead of validating presence of its id"
-category: quick tips
-tags: [ruby on rails, ruby 4]
----
-{% include JB/setup %}
-
-When we implement an association between two models, the model on the
+description: "When we implement an association between two models, the model on the
 ```belongs_to``` end of the association has an additional ```_id``` field that
 usually corresponds to the name of the model at the other end. When we write
 validations, in most cases we just require the ```_id``` field to be present and
 don't really care what's in there. Sometimes we may add a numericality
 validation for it if we're using a SQL database and its default IDs. But can we
-do better? Sure we can.
+do better? Sure we can."
+category: quick tips
+tags: [ruby on rails, ruby 4]
+---
+{% include JB/setup %}
+
+{{ page.description }}
 <!--break-->
 
 <h2>Object, not ID</h2>

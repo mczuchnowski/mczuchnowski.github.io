@@ -8,7 +8,7 @@
       {% endif %}
       {{ site.title }}
     </title>
-    <meta name="description" content="{{ page.tagline }}">
+    <meta name="description" content="{{ page.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -42,7 +42,7 @@
                 {% assign pages_list = site.pages %}
                 {% assign group = 'navigation' %}
                 {% include JB/pages_list %}
-                <li class="shadow-warrior"><a href="http://www.monkeys.com/spammers-are-leeches/">Monkeys</a></li>
+                <li class="shadow-warrior"><a href="http://www.monkeys.com/spammers-are-leeches/">|</a></li>
               </ul>
               <ul class="nav pull-right social">
                 <!-- <li class="divider-vertical"></li> -->

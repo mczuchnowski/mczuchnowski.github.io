@@ -2,18 +2,19 @@
 layout: post
 title: "Dynamic flash messages in Devise"
 tagline: "Or how to override Devise controllers"
-category: tutorials
-tags: [ruby on rails, rails 4, devise]
----
-{% include JB/setup %}
-
-This blog post was inspired by a recent question on Treehouse forum. One of the
+description: "This blog post was inspired by a recent question on Treehouse forum. One of the
 students asked how to create a dynamic flash message that the user would see
 after signing in through Devise. I was sure that the ```devise.yml``` file's
 messages can use basic Ruby string interpolation and that you could simply put
 ```#{current_user.email}``` inside the message. I was so wrong. I like
 challenges, so after some searching and experimenting I managed to solve this
-and now I would like to share what I've learned.
+and now I would like to share what I've learned."
+category: tutorials
+tags: [ruby on rails, rails 4, devise]
+---
+{% include JB/setup %}
+
+{{ page.description }}
 <!--break-->
 
 <h2>What we want</h2>

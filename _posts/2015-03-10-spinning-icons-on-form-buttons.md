@@ -2,16 +2,17 @@
 layout: post
 title: "Spinning icons on form buttons"
 tagline: "Easy tweak for better user experience"
+description: "I'm sure you've seen it somewhere: you click a submit button in an online form
+(maybe when paying with a credit card), the button instantly becomes disabled
+and gets a spinning icon that suggests it's doing something behind the scenes.
+It enhances your user experience and makes the site visually responsive. You may
+not know that this feature ships with Rails and is very easy to implement."
 category: quick tips
 tags: [ruby on rails, rails 4, jquery]
 ---
 {% include JB/setup %}
 
-I'm sure you've seen it somewhere: you click a submit button in an online form
-(maybe when paying with a credit card), the button instantly becomes disabled
-and gets a spinning icon that suggests it's doing something behind the scenes.
-It enhances your user experience and makes the site visually responsive. You may
-not know that this feature ships with Rails and is very easy to implement.
+{{ page.description }}
 <!--break-->
 
 Make sure you have this line in your ```application.js``` file, just under the

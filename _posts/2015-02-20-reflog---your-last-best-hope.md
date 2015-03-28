@@ -2,17 +2,18 @@
 layout: post
 title: "Reflog - your last, best hope"
 tagline: "When you make a huge mistake"
+description: "Git is very flexible. It allows you to 'save' the current state of your code, do
+some experiments and move back in time if your experiments go wrong. It also
+allows you to tamper with history - you can rename your old commits, merge them
+together and even delete them. But what if you tampered with history and
+realized that it was a huge mistake? You can't get back to a point in history
+if you removed that point in history. Or can you?"
 category: quick tips
 tags: [git]
 ---
 {% include JB/setup %}
 
-Git is very flexible. It allows you to "save" the current state of your code, do
-some experiments and move back in time if your experiments go wrong. It also
-allows you to tamper with history - you can rename your old commits, merge them
-together and even delete them. But what if you tampered with history and
-realized that it was a huge mistake? You can't get back to a point in history
-if you removed that point in history. Or can you?
+{{ page.description }}
 <!--break-->
 
 <h2>Reflog - the safety net</h2>

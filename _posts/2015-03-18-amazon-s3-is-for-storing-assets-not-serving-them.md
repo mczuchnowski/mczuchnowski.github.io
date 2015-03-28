@@ -2,16 +2,17 @@
 layout: post
 title: "Amazon S3 is for storing assets"
 tagline: "CloudFront is for serving them"
+description: "This quick tip is the result of my recent discovery. 99% of websites I've seen
+that use Amazon's services (AWS) for storing and serving assets (such as images)
+use S3 buckets for everything - they upload assets there and then serve those
+assets from the same bucket. Even big players. And it's not the most efficient
+or even the correct way to do this."
 category: quick tips
 tags: [aws]
 ---
 {% include JB/setup %}
 
-This quick tip is the result of my recent discovery. 99% of websites I've seen
-that use Amazon's services (AWS) for storing and serving assets (such as images)
-use S3 buckets for everything - they upload assets there and then serve those
-assets from the same bucket. Even big players. And it's not the most efficient
-or even the correct way to do this.
+{{ page.description }}
 <!--break-->
 
 <h2>S3</h2>

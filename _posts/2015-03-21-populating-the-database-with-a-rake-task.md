@@ -2,16 +2,17 @@
 layout: post
 title: "Populating the database using a rake task"
 tagline: "With assistance from Faker gem"
+description: "There is a Rails convention for populating the database - through the
+```db/seeds.rb``` file. But I sometimes want to just add some additional objects
+to the database. For example, populate it with 100 entries, see how it performs
+and then add 100 more. There is an easy trick for this that I learned from
+Hampton Catlin."
 category: quick tips
 tags: [ruby on rails, rails 4, rake]
 ---
 {% include JB/setup %}
 
-There is a Rails convention for populating the database - through the
-```db/seeds.rb``` file. But I sometimes want to just add some additional objects
-to the database. For example, populate it with 100 entries, see how it performs
-and then add 100 more. There is an easy trick for this that I learned from
-Hampton Catlin.
+{{ page.description }}
 <!--break-->
 
 <h2>Custom Rake Task</h2>

@@ -2,18 +2,19 @@
 layout: post
 title: "Devise and Strong Parameters"
 tagline: "Configuring custom user attributes"
-category: tutorials
-tags: [ruby on rails, rails 4, devise]
----
-{% include JB/setup %}
-
-This blog post was originally intended for Treehouse students who try to do the
+description: "This blog post was originally intended for Treehouse students who try to do the
 outdated Treebook course using Rails 4. It explains how to switch from Rails 3
 model-based params whitelisting to Rails 4 controller-based params
 whitelisting for mass assignment in the context of Devise which does not give
 you an overt users controller to work with. It may also be helpful for anyone
 trying to add some custom user parameters to a Devise-generated model and allow
-users to actually use and update them.
+users to actually use and update them."
+category: tutorials
+tags: [ruby on rails, rails 4, devise]
+---
+{% include JB/setup %}
+
+{{ page.description }}
 <!--break-->
 
 <h2>attr_accessible</h2>

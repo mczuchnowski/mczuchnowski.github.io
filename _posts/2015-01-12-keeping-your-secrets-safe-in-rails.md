@@ -2,12 +2,7 @@
 layout: post
 title: "Keeping your secrets safe in Rails"
 tagline: "Using environment variables and .gitignore"
-category: tutorials
-tags: [ruby on rails, rails 4, security, git]
----
-{% include JB/setup %}
-
-At some point you will want to extend your Rails app by connecting it to some
+description: "At some point you will want to extend your Rails app by connecting it to some
 external service. It might be a mailer, Amazon AWS account for storing assets or
 a Facebook app allowing users to sign up using Omniauth. Whatever it is, in most
 cases you will get some secret credentials in the form of meaningless strings
@@ -15,7 +10,13 @@ that will allow the app to get recognized by said services and connect
 to them. The thing is, if you're using version control (and who doesn't?), your
 credentials (secret keys, passwords) will find their way to the hands of people
 whose intentions are anything but ethical. So how do you inject these secret
-strings into your Rails app without compromising security?
+strings into your Rails app without compromising security?"
+category: tutorials
+tags: [ruby on rails, rails 4, security, git]
+---
+{% include JB/setup %}
+
+{{ page.description }}
 <!--break-->
 
 <h2>Environment variables</h2>

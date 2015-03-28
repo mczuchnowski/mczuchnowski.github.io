@@ -2,20 +2,20 @@
 layout: post
 title: "Turbolinks and jQuery"
 tagline: "How to make them work together?"
-category: tutorials
-tags: [ruby on rails, rails 4, jquery]
----
-{% include JB/setup %}
-
-Turbolinks were introduced in Rails to improve responsiveness. They make
-your site much smoother, closer to a
-[SPA](http://en.wikipedia.org/wiki/Single-page_application). However, they also
+description: "Turbolinks were introduced in Rails to improve responsiveness. They make
+your site much smoother, closer to a single-page application. However, they also
 introduce a minor complication when you want to use jQuery (or any JS for that
 matter). Imagine: you write your jQuery code, wrap it in the usual
 ```$(document).ready()```, run the server and the code seems to work fine.
 But then you click some links here and there, provoke your jQuery
 code to run again and...nothing happens. It doesn't work anymore. This can be
-frustrating if you're just starting your learning adventure.
+frustrating if you're just starting your learning adventure."
+category: tutorials
+tags: [ruby on rails, rails 4, jquery]
+---
+{% include JB/setup %}
+
+{{ page.description }}
 <!--break-->
 
 <h2>Problem</h2>

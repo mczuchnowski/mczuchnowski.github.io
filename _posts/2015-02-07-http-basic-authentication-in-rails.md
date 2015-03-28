@@ -2,18 +2,19 @@
 layout: post
 title: "HTTP Basic Authentication in Rails"
 tagline: "Implementing and testing it in RSpec"
-category: tutorials
-tags: [ruby on rails, rails 4, security]
----
-{% include JB/setup %}
-
-Until a few days ago, the only Rails technique I knew for authentication and
+description: "Until a few days ago, the only Rails technique I knew for authentication and
 authorization was through separate user model and session controller, with
 registration forms, logging in, boolean ```admin``` fields, and with before
 actions that check if the currently logged in user has proper permissions. This
 was done manually or through gems like Devise or Warden (plus maybe CanCanCan or
 Pundit). But what if that's too heavy and you really want something very basic
-and simple?
+and simple?"
+category: tutorials
+tags: [ruby on rails, rails 4, security]
+---
+{% include JB/setup %}
+
+{{ page.description }}
 <!--break-->
 
 Maybe you don't want to set up the whole user model with database migrations and

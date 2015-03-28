@@ -2,16 +2,17 @@
 layout: post
 title: "Introducing custom flash types"
 tagline: "For all your non-default message types"
+description: "Out of the box, Rails only knows two types of flash messages: ```:notice``` and
+```:alert```. You generally use the former for informational purposes and the
+latter for errors and warnings. One of the questions on Treehouse forum reminded
+me that you can use other types with custom names BUT they first have to be
+defined."
 category: quick tips
 tags: [ruby on rails, rails 4]
 ---
 {% include JB/setup %}
 
-Out of the box, Rails only knows two types of flash messages: ```:notice``` and
-```:alert```. You generally use the former for informational purposes and the
-latter for errors and warnings. One of the questions on Treehouse forum reminded
-me that you can use other types with custom names BUT they first have to be
-defined.
+{{ page.description }}
 <!--break-->
 
 <h2>New types of messages</h2>
