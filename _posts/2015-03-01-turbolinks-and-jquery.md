@@ -6,7 +6,7 @@ description: "Turbolinks were introduced in Rails to improve responsiveness. The
 your site much smoother, closer to a single-page application. However, they also
 introduce a minor complication when you want to use jQuery (or any JS for that
 matter). Imagine: you write your jQuery code, wrap it in the usual
-```$(document).ready()```, run the server and the code seems to work fine.
+```$(document).on('ready')```, run the server and the code seems to work fine.
 But then you click some links here and there, provoke your jQuery
 code to run again and...nothing happens. It doesn't work anymore. This can be
 frustrating if you're just starting your learning adventure."
@@ -24,8 +24,8 @@ Here's a sample code from a social app that I once made:
 
 {% highlight javascript %}
 // statuses.js
-$(document).ready(
-  $(".thums-up, .thumbs-down").click( function() {
+$(document).on('ready', function() {
+  $(".uppie, .downie").click( function() {
     if ($(this).hasClass('highlighted')) {
       $(this).removeClass('highlighted');
     } else {
@@ -33,7 +33,7 @@ $(document).ready(
       $(this).addClass('highlighted');
     }
   });
-);
+});
 {% endhighlight %}
 
 It basically listens to click events and applies the ```.highlighted``` class to
@@ -53,17 +53,14 @@ friend ```(document).ready```.
 
 After encountering that problem and doing a short search, I found a relevant
 question and answer on Stack Exchange. Turbolinks fire another event called
-```page:load```. So what you want to do is wrap your code in a function and run
-that function whenever ```(document).ready``` <strong>or</strong>
-```page:load``` are fired. In this app, I called my function ```ready``` and the
-new code looks like this:
+```page:load```. So what you want to do add ```page:load``` as an event that
+fires our custom code. Luckily, the jQuery's ```.on()``` accepts multiple events
+as long as their names are separated with spaces:
 
 {% highlight javascript %}
 // statuses.js
-var ready;
-
-ready = function() {
-  $(".thums-up, .thumbs-down").click( function() {
+$(document).on('ready page:load', function() {
+  $(".uppie, .downie").click( function() {
     if ($(this).hasClass('highlighted')) {
       $(this).removeClass('highlighted');
     } else {
@@ -71,15 +68,11 @@ ready = function() {
       $(this).addClass('highlighted');
     }
   });
-};
+});{% endhighlight %}
 
-$(document).ready(ready);
-$(document).on('page:load', ready);
-{% endhighlight %}
-
-As you can see in the last two lines, the whole custom ```ready``` function runs
-whenever the user visits the page, refreshes it or ends up on it by clicking a
-turbolink somewhere on the website. The solution is easy, but not very obvious.
+Now our custom function runs whenever the user visits the page, refreshes it or
+ends up on it by clicking a turbolink somewhere on the website. The solution is
+easy, but not very obvious.
 
 <h2>Bonus Round</h2>
 
@@ -96,14 +89,14 @@ $('#status-maker').slideDown(250);
 {% endhighlight %}
 
 This causes a new problem: these re-rendered statuses were not there when you
-fired your ```(document).ready``` or ```page:load```, so they will not react
-to the cool ```ready``` function that adds and removes highlighting. Or the old
-statuses will react, but not the new one that just got created. We need a way to
+fired your ```ready``` or ```page:load``` events, so they will not react
+to our custom function that adds and removes highlighting. Or the old statuses
+will react, but not the very new one that just got created. We need a way to
 run our custom function also when new elements are dynamically added to the DOM.
 It's quite simple, actually. We just need to name a new event, trigger it and
 add it to the list that currently has our two events that already run our custom
-```ready``` function. Let's call it ```statusesLoaded```. Here are the final
-versions of both files:
+function. Let's call it ```statusesLoaded```. Here are the final versions of
+both files:
 
 {% highlight javascript %}
 // create.js.erb
@@ -115,10 +108,8 @@ $('#statuses').trigger("statusesLoaded");
 
 {% highlight javascript %}
 // statuses.js
-var ready;
-
-ready = function() {
-  $(".thums-up, .thumbs-down").click( function() {
+$(document).on('ready page:load statusesLoaded', function() {
+  $(".uppie, .downie").click( function() {
     if ($(this).hasClass('highlighted')) {
       $(this).removeClass('highlighted');
     } else {
@@ -126,16 +117,12 @@ ready = function() {
       $(this).addClass('highlighted');
     }
   });
-};
-
-$(document).ready(ready);
-$(document).on('page:load', ready);
-$(document).on('statusesLoaded', ready);
+});
 {% endhighlight %}
 
-Now the custom ```ready``` function runs whenever the user visits the page,
-refreshes it, ends up on it by clicking a turbolink <strong>OR</strong> adds a
-new status to the list dynamically.
+Now our custom function runs whenever the user visits the page, refreshes it,
+ends up on it by clicking a turbolink <strong>OR</strong> adds a new status to
+the list dynamically.
 
 <h2>Conclusion</h2>
 
