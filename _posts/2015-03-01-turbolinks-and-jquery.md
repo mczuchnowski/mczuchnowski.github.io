@@ -47,7 +47,7 @@ another place on the website, the clicking will no longer do anything.
 It seems weird at first - your first reaction is "my JS code sucks". But it
 worked before! Does that mean the document was not loaded and your page is not
 ready? No. It means that another event got fired, but it wasn't your good ol'
-friend ```(document).ready```.
+friend ```(document).on('ready')```.
 
 <h2>Solution</h2>
 
