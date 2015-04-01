@@ -67,7 +67,7 @@ pattern, here's an example (no, these are not my real access keys):
 {% highlight yaml %}
 # supersecret gmail credentials
 GMAIL_USERNAME: 'Gmail Man'
-GMAIL_PASSWORD: 'mypassword123'
+GMAIL_PASSWORD: 'mypassword1234'
 
 # supersecret amazon aws credentials
 AWS_ACCESS_KEY_ID: 'AAABBBCCC111222333'
