@@ -84,7 +84,7 @@ And if I don't want some controller actions to create activities in the feed, I 
 
 <h2>Bonus Round: Devise</h2>
 
-This is all candy canes and sugar plum fairies until you decide to add user-related actions to the feed when Devise is your tool of choice. Let's assume we just want an activity to be generated when a new user registers. This means we have to override the ```create``` action of the users controller. I already describe the exact method in <a href="http://mczuchnowski.github.io/tutorials/2015/03/23/dynamic-flash-messages-in-devise/">this blog post</a>. In this case we want to override the registrations controller's ```create``` action by adding one line just under the ```if resource.persisted?``` condition:
+This is all candy canes and sugar plum fairies until you decide to add user-related actions to the feed when Devise is your tool of choice. Let's assume we just want an activity to be generated when a new user registers. This means we have to override the ```create``` action of the users controller. I already described the exact method in <a href="http://mczuchnowski.github.io/tutorials/2015/03/23/dynamic-flash-messages-in-devise/">this blog post</a>. In this case we want to override the registrations controller's ```create``` action by adding one line just under the ```if resource.persisted?``` condition:
 
 {% highlight ruby %}
 # app/controllers/registrations_controller.rb
@@ -120,4 +120,4 @@ Don't forget to specify the controller in the route:
 devise_for :users, controllers: { registrations: "registrations" }
 {% endhighlight %}
 
-If you want to specify ```create_activity``` for more actions, you will have to override them as well.
+The partial goes to a folder which corresponds to the Devise model you're using (usually it's ```user```). If you want to specify ```create_activity``` for more actions, you will have to override them as well.
