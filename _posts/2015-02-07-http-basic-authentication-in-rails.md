@@ -1,21 +1,15 @@
 ---
 layout: post
 title: "HTTP Basic Authentication in Rails"
-tagline: "Implementing and testing it in RSpec"
-description: "Until a few days ago, the only Rails technique I knew for authentication and
+---
+
+Until a few days ago, the only Rails technique I knew for authentication and
 authorization was through separate user model and session controller, with
 registration forms, logging in, boolean ```admin``` fields, and with before
 actions that check if the currently logged in user has proper permissions. This
 was done manually or through gems like Devise or Warden (plus maybe CanCanCan or
 Pundit). But what if that's too heavy and you really want something very basic
-and simple?"
-category: tutorials
-tags: [ruby on rails, rails 4, security]
----
-{% include JB/setup %}
-
-{{ page.description }}
-<!--break-->
+and simple?
 
 Maybe you don't want to set up the whole user model with database migrations and
 forms? Maybe you just want to restrict some parts of your website? Turns out
@@ -28,7 +22,7 @@ tutorials, courses or books.
 Rails, be advised that it's not the most secure method of authentication. Unless
 you have an SSL certificate on your site, the credentials you enter when logging
 in with this method are not securely encrypted. This might be an issue if, for
-example, you're logging in while sitting in a cafe and using their public network
+example, you're logging in while sitting in a café and using their public network
 connection. Because of its simplicity, it's great for your private apps,
 disposable training apps or pet projects, but you should not use it on
 production sites that hold sensitive data without an SSL certificate.
@@ -39,7 +33,7 @@ Before you start implementing basic authentication, you need a place to store
 the credentials - username and password - that will allow access to restricted
 parts of your site. You should not store them directly in your code. I suggest
 using the method I described in my very first blog post:
-[Keeping your secrets safe in Rails](/tutorials/2015/03/12/keeping-your-secrets-safe-in-rails)
+[Keeping your secrets safe in Rails]({% post_url 2015-01-12-keeping-your-secrets-safe-in-rails %})
 
 Throughout this tutorial I'll be assuming that you have a ```local_env.yml``` in
 your app's ```config/``` directory, untracked by git, with content similar to
@@ -101,8 +95,10 @@ as well), I will only show you the RSpec way of testing this:
 
 {% highlight ruby %}
 # admin or dashboard controller spec
+
 before :each do
-  request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(ENV['ADMIN_NAME'],ENV['ADMIN_PASSWORD'])
+  request.env['HTTP_AUTHORIZATION'] =
+    ActionController::HttpAuthentication::Basic.encode_credentials(ENV['ADMIN_NAME'],ENV['ADMIN_PASSWORD'])
 end
 
 describe "GET 'index'" do

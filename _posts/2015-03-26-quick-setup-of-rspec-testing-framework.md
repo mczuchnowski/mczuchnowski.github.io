@@ -1,19 +1,13 @@
 ---
 layout: post
 title: "Quick setup of RSpec testing framework"
-tagline: "Using rails_apps_testing gem"
-description: "This blog post applies only to people who prefer writing tests using RSpec with
+---
+
+This blog post applies only to people who prefer writing tests using RSpec with
 Factory Girl and Capybara. It describes a quick way to get your whole testing
 framework set up and configured with just one gem and one console command. It
 automatically sets you up to work with specs as described in 'Everyday Rails
-Testing with RSpec' book."
-category: quick tips
-tags: [ruby on rails, rails 4, rspec]
----
-{% include JB/setup %}
-
-{{ page.description }}
-<!--break-->
+Testing with RSpec' book.
 
 <h2>The rails_apps_testing gem</h2>
 

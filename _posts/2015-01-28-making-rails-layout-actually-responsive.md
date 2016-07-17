@@ -1,20 +1,14 @@
 ---
 layout: post
 title: "Making Rails layout actually responsive"
-tagline: "Using the responsive meta tag"
-description: "You applied Bootstrap's cool, responsive div classes or wrote your own media
+---
+
+You applied Bootstrap's cool, responsive div classes or wrote your own media
 queries in your Rails website. You test your new layout by resizing the browser
 window in various ways and everything seems to work fine. But then you open your
 site on your tablet or mobile phone and it's no longer responsive. The whole
 desktop version of your site is crammed into a tiny screen. 'What the hell?',
-you might ask."
-category: quick tips
-tags: [ruby on rails, html]
----
-{% include JB/setup %}
-
-{{ page.description }}
-<!--break-->
+you might ask.
 
 You might have banged your head on the wall for hours trying to find out why the
 site doesn't want to be responsive on mobile devices. I know I did. But then I

@@ -1,21 +1,15 @@
 ---
 layout: post
 title: "Dynamic flash messages in Devise"
-tagline: "Or how to override Devise controllers"
-description: "This blog post was inspired by a recent question on Treehouse forum. One of the
+---
+
+This blog post was inspired by a recent question on Treehouse forum. One of the
 students asked how to create a dynamic flash message that the user would see
 after signing in through Devise. I was sure that the ```devise.yml``` file's
 messages can use basic Ruby string interpolation and that you could simply put
-```#{current_user.email}``` inside the message. I was so wrong. I like
+```#{current_user.email}``` inside the message. I was so wrong! I like
 challenges, so after some searching and experimenting I managed to solve this
-and now I would like to share what I've learned."
-category: tutorials
-tags: [ruby on rails, rails 4, devise]
----
-{% include JB/setup %}
-
-{{ page.description }}
-<!--break-->
+and now I would like to share what I've learned.
 
 <h2>What we want</h2>
 
@@ -54,9 +48,8 @@ default Devise sessions controller:
 
 {% highlight ruby %}
 # app/controllers/sessions_controller.rb
-class SessionsController < Devise::SessionsController
 
-end
+class SessionsController < Devise::SessionsController; end
 {% endhighlight %}
 
 We also need to change routing to tell Devise that we want it to use our custom
@@ -65,7 +58,9 @@ Devise model is called User:
 
 {% highlight ruby %}
 # app/controllers/sessions_controller.rb
+...
 devise_for :users, controllers: { sessions: 'sessions' }
+...
 {% endhighlight %}
 
 With this, when looking for appropriate methods, Devise will first look at our
@@ -82,13 +77,15 @@ I mentioned before. The new method will look something like this:
 
 {% highlight ruby %}
 # app/controllers/sessions_controller.rb
-  def create
-    self.resource = warden.authenticate!(auth_options)
-    flash[:notice] = "Welcome back, #{current_user.email}" if is_flashing_format?
-    sign_in(resource_name, resource)
-    yield resource if block_given?
-    respond_with resource, location: after_sign_in_path_for(resource)
-  end
+...
+def create
+  self.resource = warden.authenticate!(auth_options)
+  flash[:notice] = "Welcome back, #{current_user.email}" if is_flashing_format?
+  sign_in(resource_name, resource)
+  yield resource if block_given?
+  respond_with resource, location: after_sign_in_path_for(resource)
+end
+...
 {% endhighlight %}
 
 Now, whenever a user successfully signs in, they will see a flash notice which

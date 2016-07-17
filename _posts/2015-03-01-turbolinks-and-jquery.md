@@ -1,22 +1,16 @@
 ---
 layout: post
 title: "Turbolinks and jQuery"
-tagline: "How to make them work together?"
-description: "Turbolinks were introduced in Rails to improve responsiveness. They make
+---
+
+Turbolinks were introduced in Rails to improve responsiveness. They make
 your site much smoother, closer to a single-page application. However, they also
 introduce a minor complication when you want to use jQuery (or any JS for that
 matter). Imagine: you write your jQuery code, wrap it in the usual
 ```$(document).on('ready')```, run the server and the code seems to work fine.
 But then you click some links here and there, provoke your jQuery
 code to run again and...nothing happens. It doesn't work anymore. This can be
-frustrating if you're just starting your learning adventure."
-category: tutorials
-tags: [ruby on rails, rails 4, jquery]
----
-{% include JB/setup %}
-
-{{ page.description }}
-<!--break-->
+frustrating if you're just starting your learning adventure.
 
 <h2>Problem</h2>
 
@@ -24,6 +18,7 @@ Here's a sample code from a social app that I once made:
 
 {% highlight javascript %}
 // statuses.js
+
 $(document).on('ready', function() {
   $(".uppie, .downie").click( function() {
     if ($(this).hasClass('highlighted')) {
@@ -59,6 +54,7 @@ as long as their names are separated with spaces:
 
 {% highlight javascript %}
 // statuses.js
+
 $(document).on('ready page:load', function() {
   $(".uppie, .downie").click( function() {
     if ($(this).hasClass('highlighted')) {
@@ -100,14 +96,15 @@ both files:
 
 {% highlight javascript %}
 // create.js.erb
+
 $('#statuses').html("<%= j (render @statuses) %>");
 $('#status-form').slideUp(350);
 $('#status-maker').slideDown(250);
 $('#statuses').trigger("statusesLoaded");
-{% endhighlight %}
 
-{% highlight javascript %}
+
 // statuses.js
+
 $(document).on('ready page:load statusesLoaded', function() {
   $(".uppie, .downie").click( function() {
     if ($(this).hasClass('highlighted')) {

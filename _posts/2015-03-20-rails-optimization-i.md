@@ -1,19 +1,13 @@
 ---
 layout: post
 title: "Rails Optimization I"
-tagline: "Eager loading and counter cache"
-description: "Code optimization often sounds scary. But basic optimization in Rails doesn't
+---
+
+Code optimization often sounds scary. But basic optimization in Rails doesn't
 have to be scary or hard at all. As always, you have a great community to back
 you up with gems that facilitate everything. In this first post about
 optimization we will take a look at 'eager loading', 'counter cache' and
-even take a quick peek at 'unused eager loading'. Bullet gem will be our guide."
-category: tutorials
-tags: [ruby on rails, rails 4, optimization]
----
-{% include JB/setup %}
-
-{{ page.description }}
-<!--break-->
+even take a quick peek at 'unused eager loading'. Bullet gem will be our guide.
 
 <h2>Introduction</h2>
 
@@ -35,6 +29,7 @@ development group.
 
 {% highlight ruby %}
 # Gemfile
+
 group :development do
   ...
   gem 'bullet'
@@ -48,10 +43,9 @@ repository):
 
 {% highlight ruby %}
 # config/environments/development.rb
+
 Rails.application.configure do
-
-...
-
+  ...
   config.after_initialize do
     Bullet.enable = true
     Bullet.alert = true
@@ -59,7 +53,6 @@ Rails.application.configure do
     Bullet.console = true
     Bullet.rails_logger = true
   end
-
 end
 {% endhighlight %}
 
@@ -67,6 +60,7 @@ Here's the schema for our simple application:
 
 {% highlight ruby %}
 # db/schema.rb
+
 create_table "comments", force: :cascade do |t|
   t.string   "body"
   t.integer  "user_id"
@@ -95,6 +89,7 @@ status comments count:
 
 {% highlight haml %}
 // app/views/statuses/index.html.haml
+
 %p#notice= notice
 %h1 Listing Statuses
 %table
@@ -184,7 +179,7 @@ Well, OK, it still yells at us, but with a different issue.
 
 <h2>Counter cache</h2>
 
-Bullet describes our  current issue like this:
+Bullet describes our current issue like this:
 
 <pre>
 Need Counter Cache
@@ -240,6 +235,7 @@ create or destroy comments:
 
 {% highlight ruby %}
 # app/models/comment.rb
+
 belongs_to :status, counter_cache: true
 {% endhighlight %}
 
@@ -283,5 +279,5 @@ and it's all good.
 
 Bullet is a brilliant gem that will detect the most common performance problems
 in your app and even tell you what to do to fix them. This is helpful for
-beginners and veterans alike - even if you're an experienced dev, you may forget
+beginners and veterans alike - even if you're an experienced developer, you may forget
 to do counter caching or eager loading somewhere in your app.

@@ -1,21 +1,15 @@
 ---
 layout: post
 title: "Devise and Strong Parameters"
-tagline: "Configuring custom user attributes"
-description: "This blog post was originally intended for Treehouse students who try to do the
+---
+
+This blog post was originally intended for Treehouse students who try to do the
 outdated Treebook course using Rails 4. It explains how to switch from Rails 3
 model-based params whitelisting to Rails 4 controller-based params
 whitelisting for mass assignment in the context of Devise which does not give
 you an overt users controller to work with. It may also be helpful for anyone
 trying to add some custom user parameters to a Devise-generated model and allow
-users to actually use and update them."
-category: tutorials
-tags: [ruby on rails, rails 4, devise]
----
-{% include JB/setup %}
-
-{{ page.description }}
-<!--break-->
+users to actually use and update them.
 
 <h2>attr_accessible</h2>
 
@@ -75,26 +69,18 @@ forms:
 
 {% highlight ruby %}
 # application_controller.rb
+
 before_action :configure_permitted_parameters, if: :devise_controller?
 
 protected
 
 def configure_permitted_parameters
-  devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name, :nationality]
-  devise_parameter_sanitizer.for(:account_update) << [:first_name, :last_name, :nationality]
+  devise_parameter_sanitizer.for(:sign_up) <<
+    [:first_name, :last_name, :nationality]
+
+  devise_parameter_sanitizer.for(:account_update) <<
+    [:first_name, :last_name, :nationality]
 end
-{% endhighlight %}
-
-This will also work:
-
-{% highlight ruby %}
-# application_controller.rb
-...
-
-  devise_parameter_sanitizer.for(:sign_up) << :first_name << :last_name << :nationality
-  devise_parameter_sanitizer.for(:account_update) << :first_name << :last_name << :nationality
-
-...
 {% endhighlight %}
 
 You can fine-tune this and, for example, prevent users from changing their
@@ -111,6 +97,7 @@ below:
 
 {% highlight ruby %}
 # config/initializers/devise_permitted_parameters.rb
+
 module DevisePermittedParameters
   extend ActiveSupport::Concern
 
@@ -121,8 +108,11 @@ module DevisePermittedParameters
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name, :victim_relation]
-    devise_parameter_sanitizer.for(:account_update) << [:first_name, :last_name, :victim_relation]
+    devise_parameter_sanitizer.for(:sign_up) <<
+      [:first_name, :last_name, :victim_relation]
+
+    devise_parameter_sanitizer.for(:account_update) <<
+      [:first_name, :last_name, :victim_relation]
   end
 
 end
