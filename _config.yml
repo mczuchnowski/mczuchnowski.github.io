@@ -1,6 +1,6 @@
 # Site settings
-title: Rails Acolyte
-description: "Maciej Czuchnowski's technical blog"
+title: Maciej's Playground
+description: "Maciej Czuchnowski's personal website"
 url: "http://mczuchnowski.github.io"
 author:
   name: "Maciej Czuchnowski"
@@ -11,25 +11,16 @@ baseurl: / # Change this to your relative path (ex: /blog/), or leave just a /
 markdown: kramdown
 source: .
 destination: ./_site
-permalink: /blog/:title
-paginate: 5
-paginate_path: /blog/page:num/
 
 # Default values
 defaults:
   -
     scope:
       path: ""
-      type: "posts"
-    values:
-      layout: "post"
-
-# Custom variables
-blogurl: /blog/
 
 # Options
 custom_header: false
 custom_nav_footer: false
 reverse: false
 
-plugins: [jekyll-paginate]
+plugins: []
