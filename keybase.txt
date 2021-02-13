@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/mczuchnowski
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://mczuchnowski.github.io
+  * I am mczuchnowski (https://keybase.io/mczuchnowski) on keybase.
+  * I have a public key ASAgbXHyKsYztC_Zu8g3Lv75tVK_rHlmoZmvD1n7gh_-7go
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01204fbdc0950ad2f5e08c079be5b904948f3c9a8dcce4fbe29265422dc7c827efcd0a",
+      "host": "keybase.io",
+      "kid": "0120206d71f22ac633b42fd9bbc8372efef9b552bfac7966a199af0f59fb821ffeee0a",
+      "uid": "4e2ef093c2e374c4fa2b9b640ff5b119",
+      "username": "mczuchnowski"
+    },
+    "merkle_root": {
+      "ctime": 1613228161,
+      "hash": "55f29155674c20ffc8bec1af4ef011c55d4b7c307afb87014f781d5e91fff2c1aa053269f909a26eb70b80de662ae83b796ed23c4f26855dee0507b1ac9384b1",
+      "hash_meta": "4a6c3afac2a7d6f0aaa296e9dfa424d6536c7a8591a22b9c571b778420812125",
+      "seqno": 19101703
+    },
+    "service": {
+      "entropy": "s1tFQBZ4Uv8/LoiXUbgCDogm",
+      "hostname": "mczuchnowski.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.6.0"
+  },
+  "ctime": 1613228184,
+  "expire_in": 504576000,
+  "prev": "d08e755afdfc0fa96cab5a4c25ad2a3b67b8ae948c8cab7fab1e89257afb49bc",
+  "seqno": 22,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgIG1x8irGM7Qv2bvINy7++bVSv6x5ZqGZrw9Z+4If/u4Kp3BheWxvYWTESpcCFsQg0I51Wv38D6lsq1pMJa0qO2e4rpSMjKt/qx6JJXr7SbzEIKAlilLkJXnGOo7/AneqP35ForiRXbU6uy0kSx+P6vlvAgHCo3NpZ8RAlL7PGCkzCXdiRsrGYp24G5V9B0ZCePm/g8gDs+xJyftgKnzJqmbADTsWB+ZuG10No5dZoigzZkyNdmcoF1T2DqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIMLXkGsE2L06+6WaJwwXKeiaD42997TYTdwNxwyYwWufo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mczuchnowski
+
+==================================================================
